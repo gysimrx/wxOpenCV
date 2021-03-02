@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxOpenCV" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/wxOpenCV" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/wxOpenCV" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`pkg-config --cflags opencv`" />
+			<Add option="-fpermissive" />
+			<Add option="-D_FILE_OFFSET_BITS=64" />
+			<Add option="-DWXUSINGDLL" />
+			<Add option="-D__WXMSW_" />
+			<Add directory="C:/msys64/mingw64/lib/wx/include/msw-unicode-3.0" />
+			<Add directory="C:/msys64/mingw64/include/wx-3.0" />
+			<Add directory="C:/msys64/mingw64/include/opencv4" />
+			<Add directory="C:/data/wxOpenCV" />
+			<Add directory="C:/msys64/mingw64" />
+		</Compiler>
+		<Linker>
+			<Add option="-pipe" />
+			<Add option="-Wl,--subsystem,windows -mwindows" />
+			<Add library="wx_mswu_xrc-3.0" />
+			<Add library="wx_mswu_webview-3.0" />
+			<Add library="wx_mswu_html-3.0" />
+			<Add library="wx_mswu_qa-3.0" />
+			<Add library="wx_mswu_adv-3.0" />
+			<Add library="wx_mswu_core-3.0" />
+			<Add library="wx_baseu_xml-3.0" />
+			<Add library="wx_baseu_net-3.0" />
+			<Add library="wx_baseu-3.0" />
+			<Add library="libopencv_core.dll" />
+			<Add library="opencv_alphamat.dll" />
+			<Add library="opencv_aruco.dll" />
+			<Add library="opencv_bgsegm.dll" />
+			<Add library="opencv_calib3d.dll" />
+			<Add library="opencv_ccalib.dll" />
+			<Add library="opencv_core.dll" />
+			<Add library="opencv_datasets.dll" />
+			<Add library="opencv_dnn.dll" />
+			<Add library="opencv_dnn_objdetect.dll" />
+			<Add library="opencv_dnn_superres.dll" />
+			<Add library="opencv_dpm.dll" />
+			<Add library="opencv_face.dll" />
+			<Add library="opencv_xphoto.dll" />
+			<Add library="opencv_xobjdetect.dll" />
+			<Add library="opencv_ximgproc.dll" />
+			<Add library="opencv_xfeatures2d.dll" />
+			<Add library="opencv_videostab.dll" />
+			<Add library="opencv_videoio.dll" />
+			<Add library="opencv_video.dll" />
+			<Add library="opencv_tracking.dll" />
+			<Add library="opencv_text.dll" />
+			<Add library="opencv_surface_matching.dll" />
+			<Add library="opencv_superres.dll" />
+			<Add library="opencv_structured_light.dll" />
+			<Add library="opencv_stitching.dll" />
+			<Add library="opencv_stereo.dll" />
+			<Add library="opencv_shape.dll" />
+			<Add library="opencv_sfm.dll" />
+			<Add library="opencv_saliency.dll" />
+			<Add library="opencv_rgbd.dll" />
+			<Add library="opencv_reg.dll" />
+			<Add library="opencv_rapid.dll" />
+			<Add library="opencv_quality.dll" />
+			<Add library="opencv_plot.dll" />
+			<Add library="opencv_photo.dll" />
+			<Add library="opencv_phase_unwrapping.dll" />
+			<Add library="opencv_ovis.dll" />
+			<Add library="opencv_optflow.dll" />
+			<Add library="opencv_objdetect.dll" />
+			<Add library="opencv_ml.dll" />
+			<Add library="opencv_line_descriptor.dll" />
+			<Add library="opencv_intensity_transform.dll" />
+			<Add library="opencv_imgproc.dll" />
+			<Add library="opencv_imgcodecs.dll" />
+			<Add library="opencv_img_hash.dll" />
+			<Add library="opencv_hfs.dll" />
+			<Add library="opencv_hdf.dll" />
+			<Add library="opencv_gapi.dll" />
+			<Add library="opencv_fuzzy.dll" />
+			<Add library="opencv_flann.dll" />
+			<Add library="opencv_features2d.dll" />
+			<Add directory="C:/msys64/mingw64/lib" />
+		</Linker>
+		<Unit filename="CalibrationProcessor.cpp" />
+		<Unit filename="CalibrationProcessor.h" />
+		<Unit filename="CannyProcessor.cpp" />
+		<Unit filename="CannyProcessor.h" />
+		<Unit filename="ContourProcessor.cpp" />
+		<Unit filename="ContourProcessor.h" />
+		<Unit filename="DemoApp.cpp" />
+		<Unit filename="DemoApp.h" />
+		<Unit filename="DemoFrame.cpp" />
+		<Unit filename="DemoFrame.h" />
+		<Unit filename="NumberingFramesProcessor.cpp" />
+		<Unit filename="NumberingFramesProcessor.h" />
+		<Unit filename="wxOpenCV.cpp" />
+		<Unit filename="wxOpenCV.h" />
+		<Unit filename="wxOpenCVPanel.cpp" />
+		<Unit filename="wxOpenCVPanel.h" />
+		<Unit filename="wxOpenCVProcessor.cpp" />
+		<Unit filename="wxOpenCVProcessor.h" />
+		<Extensions>
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="" main="" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxPanel wxs="wxsmith/NewPanel.wxs" src="NewPanel.cpp" hdr="NewPanel.h" fwddecl="0" i18n="1" name="NewPanel" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
