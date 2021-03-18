@@ -19,7 +19,7 @@ END_EVENT_TABLE()
 
 DemoFrame::DemoFrame(wxFrame *frame, const wxString& title):
     wxFrame(frame, -1, title),
-    opencv_(1)
+    opencv_(0)
 {
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
@@ -109,7 +109,7 @@ DemoFrame::DemoFrame(wxFrame *frame, const wxString& title):
     topSizer->Add(fgSizer1, 1, wxEXPAND, 5);
 
     wxSlider *sldr = new wxSlider(this, wxID_ANY, 1, 1, 100, wxDefaultPosition, wxDefaultSize, wxSL_VERTICAL|wxSL_INVERSE);
-   // numberingFramesProcessor_->registerSliderEvents(sldr);
+    calibrationProcessor_->registerSliderEvents(sldr);
     topSizer->Add(sldr, 0, wxEXPAND, 5);
     sldr = new wxSlider(this, wxID_ANY, 0, 0, 100, wxDefaultPosition, wxDefaultSize, wxSL_VERTICAL|wxSL_INVERSE);
     topSizer->Add(sldr, 0, wxEXPAND, 5);
