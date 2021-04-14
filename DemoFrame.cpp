@@ -19,7 +19,7 @@ END_EVENT_TABLE()
 
 DemoFrame::DemoFrame(wxFrame *frame, const wxString& title):
     wxFrame(frame, -1, title),
-    opencv_(0)
+    opencv_(1)
 {
     // create a menu bar
     wxMenuBar* mbar = new wxMenuBar();
@@ -48,9 +48,6 @@ DemoFrame::DemoFrame(wxFrame *frame, const wxString& title):
     fgSizer1->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
 
     wxOpenCVPanel *panel1 = new wxOpenCVPanel(this, wxID_ANY, wxDefaultPosition, wxSize(480, 360), wxTAB_TRAVERSAL);
-//    numberingFramesProcessor_ = new NumberingFramesProcessor(panel1);
-//    opencv_.addProcessor(numberingFramesProcessor_);
-//    numberingFramesProcessor_->registerLClickEvents(panel1);
     calibrationProcessor_ = new CalibrationProcessor(panel1);
     opencv_.addProcessor(calibrationProcessor_);
     calibrationProcessor_->registerLClickEvents(panel1);
@@ -60,20 +57,17 @@ DemoFrame::DemoFrame(wxFrame *frame, const wxString& title):
 
     wxOpenCVPanel *panel2 = new wxOpenCVPanel(this, wxID_ANY, wxDefaultPosition, wxSize(480, 360), wxTAB_TRAVERSAL);
     calibrationProcessor_->addEventHandler(panel2);
-   // cannyProcessor_ = new CannyProcessor(panel2);
-   // opencv_.addProcessor(cannyProcessor_);
     panel2->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVECAPTION));
 
     fgSizer1->Add(panel2, 1, wxEXPAND | wxALL, 5);
 
     wxStaticText *staticText = new wxStaticText(this, wxID_ANY, wxT("Process 1"), wxDefaultPosition, wxDefaultSize, 0);
     staticText->Wrap(-1);
-    wxButton *button = new wxButton(this, wxID_ANY, "stop updates");
+    wxButton *button = new wxButton(this, wxID_ANY, "calibrate");
     wxBoxSizer *bsz = new wxBoxSizer(wxHORIZONTAL);
     bsz->Add(staticText);
     bsz->Add(button);
     calibrationProcessor_->registerButtonEvents(button);
- //   numberingFramesProcessor_->registerButtonEvents(button);
     fgSizer1->Add(bsz, 1, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
 
     staticText = new wxStaticText(this, wxID_ANY, wxT("Process 2"), wxDefaultPosition, wxDefaultSize, 0);
@@ -81,17 +75,12 @@ DemoFrame::DemoFrame(wxFrame *frame, const wxString& title):
     fgSizer1->Add(staticText, 1, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
 
     wxOpenCVPanel *panel3 = new wxOpenCVPanel(this, wxID_ANY, wxDefaultPosition, wxSize(480, 360), wxTAB_TRAVERSAL);
-//    contourProcessor_ = new ContourProcessor(panel3);
-//    opencv_.addProcessor(contourProcessor_);
     calibrationProcessor_->addEventHandler(panel3);
     panel3->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVECAPTION));
 
     fgSizer1->Add(panel3, 1, wxEXPAND | wxALL, 5);
 
     wxOpenCVPanel *panel4 = new wxOpenCVPanel(this, wxID_ANY, wxDefaultPosition, wxSize(480, 360), wxTAB_TRAVERSAL);
-  // calibrationProcessor_ = new CalibrationProcessor(panel4);
-//    opencv_.addProcessor(calibrationProcessor_);
-//    calibrationProcessor_->registerButtonEvents(button);
     panel4->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVECAPTION));
 
 

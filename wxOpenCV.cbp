@@ -42,6 +42,7 @@
 			<Add directory="C:/msys64/mingw64/include/opencv4" />
 			<Add directory="C:/data/wxOpenCV" />
 			<Add directory="C:/msys64/mingw64" />
+			<Add directory="../buildopencv/modules" />
 		</Compiler>
 		<Linker>
 			<Add option="-pipe" />
